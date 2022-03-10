@@ -2,6 +2,7 @@
 
 const CONTAINER = document.getElementById('container');
 const CANVAS = document.getElementById('canvas');
+const POPUP = document.getElementById('popup');
 
 const CTX = CANVAS.getContext('2d');
 
@@ -11,8 +12,18 @@ const CANVAS_STEP_SIZE = 128;
 const SCROLL_LINE_SIZE = 10;
 let canvasK = 1;
 
-let isReady = confirm("Full screen?");
-if(isReady) document.body.requestFullscreen();
+POPUP.addEventListener('click', toggleFullScreen);
+
+function toggleFullScreen() {
+    console.log('popup click!');
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+        POPUP.style.display = 'none';
+        CONTAINER.style.display = 'block';
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
 
 function setCanvasSize() {
     if (window.screen.height < (CANVAS_MAX_HEIGHT + SCROLL_LINE_SIZE))
