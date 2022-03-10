@@ -11,6 +11,9 @@ const CANVAS_STEP_SIZE = 128;
 const SCROLL_LINE_SIZE = 10;
 let canvasK = 1;
 
+let isReady = confirm("Full screen?");
+if(isReady) document.body.requestFullscreen();
+
 function setCanvasSize() {
     if (window.screen.height < (CANVAS_MAX_HEIGHT + SCROLL_LINE_SIZE))
         canvasK = (window.screen.height - SCROLL_LINE_SIZE) / CANVAS_MAX_HEIGHT;
