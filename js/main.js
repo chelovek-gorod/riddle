@@ -15,7 +15,6 @@ let canvasK = 1;
 POPUP.addEventListener('click', toggleFullScreen);
 
 function toggleFullScreen() {
-    setTimeout(() => alert('popup click!'), 1000);
     if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
         POPUP.style.display = 'none';
