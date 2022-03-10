@@ -15,9 +15,10 @@ let isReady = confirm("Full screen?");
 if(isReady) toggleFullScreen();
 
 function toggleFullScreen() {
-    if (!document.fullscreenElement)
+    if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
-    else {
+        setTimeot(() => alert('Full Screen set!), 1000);
+    } else {
         if (document.exitFullscreen) document.exitFullscreen();
     }
 }
