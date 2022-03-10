@@ -12,6 +12,10 @@ const CANVAS_STEP_SIZE = 128;
 const SCROLL_LINE_SIZE = 10;
 let canvasK = 1;
 
+const room = new Image();
+room.src = './src/images/room0_16_frames.png';
+room.frame = 0; // frame numbers [0...15]
+
 FULL_SCREEN_POPUP.addEventListener('click', toggleFullScreen);
 
 addEventListener('fullscreenchange', showFullScreenPopup);
@@ -32,7 +36,7 @@ function toggleFullScreen() {
     } else {
         if (document.exitFullscreen) document.exitFullscreen();
     }
-    if (room.frame) room.frame = 0;
+    if (room && room.frame) room.frame = 0;
 }
 
 function setCanvasSize() {
@@ -44,16 +48,12 @@ function setCanvasSize() {
     CANVAS.width = canvasK * CANVAS_MAX_WIDTH;
     CANVAS.height = canvasK * CANVAS_MAX_HEIGHT;
     console.log('canvasK =', canvasK);
-    if (room.frame) room.frame = 0;
+    if (room && room.frame) room.frame = 0;
 }
 
 setCanvasSize();
 
 window.addEventListener('resize', setCanvasSize, false);
-
-const room = new Image();
-room.src = './src/images/room0_16_frames.png';
-room.frame = 0; // frame numbers [0...15]
 
 room.objects = [
     {
