@@ -4,6 +4,33 @@ const CONTAINER = document.getElementById('container');
 const CANVAS = document.getElementById('canvas');
 const FULL_SCREEN_POPUP = document.getElementById('fullScreenPopup');
 
+const SHELL = document.getElementById('shall');
+const OPTIONS_DIV = document.getElementById('optionsDiv');
+const BAG_DIV = document.getElementById('bagDiv');
+const USE_DIV = document.getElementById('useDiv');
+const ACTIONS_DIV = document.getElementById('actionsDiv');
+const BAG_BUTTON = document.getElementById('bagButton');
+
+function sellIn(callBack) {
+    SHELL.style.display = 'flex';
+    setTimeout(() => {
+        SHELL.style.opacity = 1;
+        if(callBack) callBack();
+    }, 30);
+}
+function sellOut() {
+    SHELL.style.opacity = 0;
+    setTimeout(() => SHELL.style.display = 'none', 300);
+}
+
+function showActions() {
+    ACTIONS_DIV.style.display = 'block';
+    setTimeout(() => ACTIONS_DIV.style.transform = 'scale(1)', 30);
+}
+
+BAG_BUTTON.addEventListener('click', () => sellIn(showActions));
+SHELL.addEventListener('click', sellOut);
+
 const CTX = CANVAS.getContext('2d');
 
 const CANVAS_MAX_WIDTH = 1408;
