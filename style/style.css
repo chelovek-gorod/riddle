@@ -47,14 +47,14 @@ body {
   /* Non-prefixed version, currently
                                 not supported by any browser */
 }
-#popup {
-  padding: 30px;
+#fullScreenPopup {
+  padding: 30px 60px;
   border: 2px solid;
   border-radius: 12px;
   color: #eeeeee;
   cursor: pointer;
 }
-#popup span {
+#fullScreenPopup span {
   font-weight: 700;
   color: #ffffff;
 }

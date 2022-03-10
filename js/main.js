@@ -2,7 +2,7 @@
 
 const CONTAINER = document.getElementById('container');
 const CANVAS = document.getElementById('canvas');
-const POPUP = document.getElementById('popup');
+const FULL_SCREEN_POPUP = document.getElementById('fullScreenPopup');
 
 const CTX = CANVAS.getContext('2d');
 
@@ -12,12 +12,22 @@ const CANVAS_STEP_SIZE = 128;
 const SCROLL_LINE_SIZE = 10;
 let canvasK = 1;
 
-POPUP.addEventListener('click', toggleFullScreen);
+FULL_SCREEN_POPUP.addEventListener('click', toggleFullScreen);
+
+addEventListener('fullscreenchange', showFullScreenPopup);
+
+function showFullScreenPopup () {
+    if (!document.fullscreenElement) {
+        CONTAINER.style.display = 'none';
+        FULL_SCREEN_POPUP.style.display = 'block';
+    }
+    console.log('Full screen is set!');
+}
 
 function toggleFullScreen() {
     if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
-        POPUP.style.display = 'none';
+        FULL_SCREEN_POPUP.style.display = 'none';
         CONTAINER.style.display = 'block';
     } else {
         if (document.exitFullscreen) document.exitFullscreen();
