@@ -32,6 +32,7 @@ function toggleFullScreen() {
     } else {
         if (document.exitFullscreen) document.exitFullscreen();
     }
+    if (room.frame) room.frame = 0;
 }
 
 function setCanvasSize() {
@@ -43,6 +44,7 @@ function setCanvasSize() {
     CANVAS.width = canvasK * CANVAS_MAX_WIDTH;
     CANVAS.height = canvasK * CANVAS_MAX_HEIGHT;
     console.log('canvasK =', canvasK);
+    if (room.frame) room.frame = 0;
 }
 
 setCanvasSize();
