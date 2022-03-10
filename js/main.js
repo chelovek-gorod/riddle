@@ -12,6 +12,7 @@ const CANVAS_STEP_SIZE = 128;
 const SCROLL_LINE_SIZE = 10;
 let canvasK = 1;
 
+<<<<<<< HEAD
 POPUP.addEventListener('click', toggleFullScreen);
 
 function toggleFullScreen() {
@@ -20,6 +21,15 @@ function toggleFullScreen() {
         document.documentElement.requestFullscreen();
         POPUP.style.display = 'none';
         CONTAINER.style.display = 'block';
+=======
+let isReady = confirm("Full screen?");
+if(isReady) toggleFullScreen();
+
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+        setTimeot(() => alert('Full Screen set!), 1000);
+>>>>>>> 46c41b64dd1f03e4d02eb7acd3f24ab0ba13cce9
     } else {
         if (document.exitFullscreen) document.exitFullscreen();
     }
