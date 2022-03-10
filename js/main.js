@@ -8,7 +8,10 @@ const SHELL = document.getElementById('shall');
 const OPTIONS_DIV = document.getElementById('optionsDiv');
 const BAG_DIV = document.getElementById('bagDiv');
 const USE_DIV = document.getElementById('useDiv');
+
 const ACTIONS_DIV = document.getElementById('actionsDiv');
+const ACTIONS_TITLE = document.getElementById('actionsTitle');
+
 const BAG_BUTTON = document.getElementById('bagButton');
 
 function sellIn(callBack) {
@@ -19,6 +22,7 @@ function sellIn(callBack) {
     }, 30);
 }
 function sellOut() {
+    ACTIONS_DIV.style.transform = 'scale(0)';
     SHELL.style.opacity = 0;
     setTimeout(() => SHELL.style.display = 'none', 300);
 }
