@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru_RU">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
 
         <title>Title</title>
         <meta name="description" content="Description">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
         <link rel="stylesheet" href="style/style.css" type="text/css">
 
@@ -19,8 +19,6 @@
     </head>
     <body>
 
-        <div id="fullScreenPopup">press for continue<br><br>in <span>Full screen</span> view</div>
-
         <div id="logo" class="side-menu"></div>
         <div id="menu" class="side-menu"></div>
         <div id="donat" class="side-menu"></div>
@@ -30,6 +28,11 @@
         <div id="container"><canvas id="canvas"></canvas></div>
 
         <div id="shall">
+            <!--
+            <div id="fullScreenDiv">
+                <div id="fullScreenText"></div>
+                <button id="fullScreenButton" onclick="setFullScreenClick();"></button>
+            </div>
             <div id="optionsDiv"></div>
             <div id="bagDiv"></div>
             <div id="useDiv"></div>
@@ -41,6 +44,7 @@
                 <div id="bagActionButton" class="action-button" onclick="bagActionButtonClick();"></div>
                 <div id="cancelActionButton" class="action-button" onclick="useActionButtonClick();"></div>
             </div>
+            -->
         </div>
 
         <script src="js/main.js"></script>
