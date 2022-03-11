@@ -1,11 +1,18 @@
 'use strict';
 
+const CurrentAgreement = 'agreement-0';
+
 localStorage.clear();
 
 const SHELL = document.getElementById('shall');
 
+const MENU = document.getElementById('menu');
+const DONAT = document.getElementById('donat');
+
+const BAG_BUTTON = document.getElementById('bagButton');
+
 let language;
-let userAgreementAcceptIs;
+let userAgreementAccept;
 
 function shellIn(elementToShow, callBack) {
     SHELL.style.display = 'flex';
@@ -45,10 +52,11 @@ if (localStorage.getItem('lang') && (
 }
 
 function testUserAgreementAccept() {
-    if (localStorage.getItem('agreement') && localStorage.getItem('agreement') === 'true') {
+    if (localStorage.getItem('agreement') && localStorage.getItem('agreement') === CurrentAgreement) {
     
         // AGREEMENT IS ACCEPTED
-        userAgreementAcceptIs = true;
+        userAgreementAccept = CurrentAgreement;
+        requestFullScreen();
     
     } else {
     
@@ -60,6 +68,54 @@ function testUserAgreementAccept() {
     }
 }
 
-function testFullScreen() {
-    console.log('testFullScreen()');
+const FullScreenDiv = document.createElement('div');
+FullScreenDiv.id = 'fullScreenDiv';
+
+let FullScreenDescription;
+let FullScreenButton;
+
+function requestFullScreen() {
+
+    switch(language) {
+        case 'de' : FullScreenDescription = `Die App wird weiterhin im Vollbildmodus ausgeführt`;
+            FullScreenButton = `ANNEHMEN`;
+            break;
+    
+        case 'ru' : FullScreenDescription = `Приложение продолжит работу в полноэкранном режиме`;
+            FullScreenButton = `ПРИНЯТЬ`;
+            break;
+    
+        default : FullScreenDescription = `The App will continue to run in full screen mode`;
+            FullScreenButton = `ACCEPT`;
+            break;
+    }
+
+    FullScreenDiv.innerHTML = `<div class="full-screen-description">${FullScreenDescription}</div>
+        <button class="full-screen-button" onclick="setFullScreen();">${FullScreenButton}</button>`;
+
+    SHELL.append(FullScreenDiv);
+    shellIn(FullScreenDiv);
+}
+
+addEventListener('fullscreenchange', ()=> {
+    if (!document.fullscreenElement) {
+        requestFullScreen();
+        DONAT.style.bottom = '-66px';
+        MENU.style.top = '-66px';
+        BAG_BUTTON.style.right = '-86px';
+    } else {
+        DONAT.style.bottom = '0';
+        MENU.style.top = '0';
+        BAG_BUTTON.style.right = '10px';
+    }
+});
+
+function setFullScreen() {
+    document.documentElement.requestFullscreen();
+    shellOut(FullScreenDiv, startGame);
+    setTimeout(() => FullScreenDiv.remove(), 300);
+}
+
+function startGame() {
+    console.log('GAME START');
 }

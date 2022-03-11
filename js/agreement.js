@@ -1,5 +1,10 @@
 'use strict';
 
+/*
+IF AGREEMENT CHANGED
+in main.js edit const CurrentAgreement version
+*/
+
 let AgreementTitle;
 let AgreementText;
 let AgreementButton;
@@ -77,10 +82,10 @@ agreementDiv.innerHTML = `
 SHELL.append(agreementDiv);
 
 function acceptClick() {
-    userAgreementAcceptIs = true;
-    localStorage.setItem('agreement', userAgreementAcceptIs);
+    userAgreementAccept = CurrentAgreement;
+    localStorage.setItem('agreement', CurrentAgreement);
     
-    shellOut(agreementDiv, testFullScreen);
+    shellOut(agreementDiv, requestFullScreen);
     setTimeout(() => agreementDiv.remove(), 300);
 }
 
