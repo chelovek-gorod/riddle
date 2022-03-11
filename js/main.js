@@ -45,9 +45,10 @@ if (localStorage.getItem('lang') && (
 }
 
 function testUserAgreementAccept() {
-    if (localStorage.getItem('Agreement') && localStorage.getItem('Agreement') === 'true') {
+    if (localStorage.getItem('agreement') && localStorage.getItem('agreement') === 'true') {
     
         // AGREEMENT IS ACCEPTED
+        userAgreementAcceptIs = true;
     
     } else {
     
@@ -57,4 +58,8 @@ function testUserAgreementAccept() {
         document.body.append(scriptAgreement);
     
     }
+}
+
+function testFullScreen() {
+    console.log('testFullScreen()');
 }

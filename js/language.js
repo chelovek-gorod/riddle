@@ -4,15 +4,15 @@ let languagesDiv = document.createElement('div');
 languagesDiv.id = 'languageDiv';
 languagesDiv.innerHTML = `
     <div class="language-case">
-        <div id="langEn" class="language" onclick="setLanguageClick('en');"></div>
+        <img class="language" src="./src/images/site-menu/lang-en.png" onclick="setLanguageClick('en');">
         <div class="language-name">English</div>
     </div>
     <div class="language-case">
-        <div id="langRu" class="language" onclick="setLanguageClick('ru');"></div>
+        <img class="language" src="./src/images/site-menu/lang-ru.png" onclick="setLanguageClick('ru');">
         <div class="language-name">Русский</div>
     </div>
     <div class="language-case">
-        <div id="langDe" class="language" onclick="setLanguageClick('de');"></div>
+        <img class="language" src="./src/images/site-menu/lang-de.png" onclick="setLanguageClick('de');">
         <div class="language-name">Deutsch</div>
     </div>`;
 
