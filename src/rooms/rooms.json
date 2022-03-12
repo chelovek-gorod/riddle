@@ -5,13 +5,9 @@
             "ru": "Обучение",
             "de": "Lernen"
         },
-        "legend": {
-            "en": "This is a tutorial quest. In this game you will quickly get acquainted with the interface and basic features. Enjoy!",
-            "ru": "Это обучающий квест. Здесь Вы очень быстро ознакомитесь с интерфейсом и базовыми возможностями в данной игре. Желаем удачи!",
-            "de": "Dies ist eine Tutorial-Quest. In diesem Spiel werden Sie sich schnell mit der Benutzeroberfläche und den grundlegenden Funktionen vertraut machen. Genießen!"
-        },
 		"preview": "./src/rooms/room0/room0_preview.png",
-        "bg": "./src/rooms/room0/room0_bg.png",
+        "bgImage": "./src/rooms/room0/room0_bg.png",
+        "bgMusic": "./src/rooms/room0/room0_bg.mp3",
         "size": {
             "width": 1920,
             "height": 1024,
@@ -32,7 +28,25 @@
                         "repeat": true,
                         "fx": "./src/rooms/room0/room0_item1_fx.mp3",
                         "fxStartFrame": 0,
-                        "fxRepeat": true
+                        "fxRepeat": true,
+                        "stateDescription": {
+                            "en": "This is a tutorial quest. In this game you will quickly get acquainted with the interface and basic features. Enjoy!",
+                            "ru": "Это обучающий квест. Здесь Вы очень быстро ознакомитесь с интерфейсом и базовыми возможностями в данной игре. Желаем удачи!",
+                            "de": "Dies ist eine Tutorial-Quest. In diesem Spiel werden Sie sich schnell mit der Benutzeroberfläche und den grundlegenden Funktionen vertraut machen. Genießen!"
+                        }
+                    },
+                    "unusable": {
+                        "img": "./src/rooms/room0/room0_item1_12frames.png",
+                        "animate": true,
+                        "repeat": true,
+                        "fx": "./src/rooms/room0/room0_item1_fx.mp3",
+                        "fxStartFrame": 0,
+                        "fxRepeat": true,
+                        "stateDescription": {
+                            "en": "This is a tutorial quest. In this game you will quickly get acquainted with the interface and basic features. Enjoy!",
+                            "ru": "Это обучающий квест. Здесь Вы очень быстро ознакомитесь с интерфейсом и базовыми возможностями в данной игре. Желаем удачи!",
+                            "de": "Dies ist eine Tutorial-Quest. In diesem Spiel werden Sie sich schnell mit der Benutzeroberfläche und den grundlegenden Funktionen vertraut machen. Genießen!"
+                        }
                     }
                 },
                 "position": {"x": 1, "y": 4},
@@ -47,6 +61,19 @@
                         }
                     },
                     "use": {}
+                },
+                "inBag": {
+                    "img": "./src/rooms/room0/room0_item1_12frames.png",
+                    "info": {
+                        "en": "Item",
+                        "ru": "Предмет",
+                        "de": "Gegenstand"
+                    },
+                    "applying": {
+                        "targetItem": "item2",
+                        "targetStateNeed": "start",
+                        "targetStateSet": "unusable"
+                    }
                 }
             }
         }
