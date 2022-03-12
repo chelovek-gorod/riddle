@@ -5,6 +5,11 @@
             "ru": "Обучение",
             "de": "Lernen"
         },
+        "legend": {
+            "en": "This is a tutorial quest. In this game you will quickly get acquainted with the interface and basic features. Enjoy!",
+            "ru": "Это обучающий квест. Здесь Вы очень быстро ознакомитесь с интерфейсом и базовыми возможностями в данной игре. Желаем удачи!",
+            "de": "Dies ist eine Tutorial-Quest. In diesem Spiel werden Sie sich schnell mit der Benutzeroberfläche und den grundlegenden Funktionen vertraut machen. Genießen!"
+        },
 		"preview": "./src/rooms/room0/room0_preview.png",
         "bgImage": "./src/rooms/room0/room0_bg.png",
         "bgMusic": "./src/rooms/room0/room0_bg.mp3",
