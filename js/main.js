@@ -1,8 +1,32 @@
 'use strict';
 
+////////////////////////////////////
+//
+//    MAIN
+//
+////////////////
+
+/***************
+    AGREEMENT V
+*/
+
 const CurrentAgreement = 'agreement-0';
 
 localStorage.clear();
+
+/***************
+    FREE IMAGES STOCK
+*/
+
+// https://unsplash.com/
+// https://www.pexels.com/
+// https://www.gettyimages.com/
+// https://pixabay.com/
+// 
+
+/***************
+    INTERFACE
+*/
 
 const SHELL = document.getElementById('shall');
 
@@ -32,6 +56,24 @@ function shellOut(elementToHide, callBack) {
     }, 300);
 }
 
+// menu elements onclick
+
+function logoClick() {
+    console.log('logoClick()');
+}
+
+function menuClick() {
+    console.log('menuClick()');
+}
+
+function donatClick() {
+    console.log('donatClick()');
+}
+
+/***************
+    LANGUAGE
+*/
+
 if (localStorage.getItem('lang') && (
     localStorage.getItem('lang') === 'en' ||
     localStorage.getItem('lang') === 'ru' ||
@@ -51,6 +93,10 @@ if (localStorage.getItem('lang') && (
 
 }
 
+/***************
+    AGREEMENT
+*/
+
 function testUserAgreementAccept() {
     if (localStorage.getItem('agreement') && localStorage.getItem('agreement') === CurrentAgreement) {
     
@@ -67,6 +113,10 @@ function testUserAgreementAccept() {
     
     }
 }
+
+/***************
+    FULL SCREEN
+*/
 
 const FullScreenDiv = document.createElement('div');
 FullScreenDiv.id = 'fullScreenDiv';
@@ -116,6 +166,21 @@ function setFullScreen() {
     setTimeout(() => FullScreenDiv.remove(), 300);
 }
 
+/***************
+    GAME START
+*/
+
 function startGame() {
-    console.log('GAME START');
+
+    let scriptJson = document.createElement('script');
+    scriptJson.src='js/json.js';
+    document.body.append(scriptJson);
+
+    let scriptRooms = document.createElement('script');
+    scriptRooms.src='js/rooms.js';
+    document.body.append(scriptRooms);
+
+    let scriptCanvas = document.createElement('script');
+    scriptCanvas.src='js/canvas.js';
+    document.body.append(scriptCanvas);
 }

@@ -1,5 +1,11 @@
 'use strict';
 
+////////////////////////////////////
+//
+//    AGREEMENT
+//
+////////////////
+
 /*
 IF AGREEMENT CHANGED
 in main.js edit const CurrentAgreement version

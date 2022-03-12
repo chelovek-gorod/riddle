@@ -1,17 +1,17 @@
 @font-face {
-  font-family: Roboto-Black;
+  font-family: 'Roboto-Black';
   src: url('fonts/Roboto-Black.ttf');
 }
 @font-face {
-  font-family: Roboto-Bold;
+  font-family: 'Roboto-Bold';
   src: url('fonts/Roboto-Bold.ttf');
 }
 @font-face {
-  font-family: Roboto-Regular;
+  font-family: 'Roboto-Regular';
   src: url('fonts/Roboto-Regular.ttf');
 }
 @font-face {
-  font-family: Roboto-Thin;
+  font-family: 'Roboto-Thin';
   src: url('fonts/Roboto-Thin.ttf');
 }
 /*
@@ -33,7 +33,7 @@
   overflow: hidden;
 }
 body {
-  font-family: Roboto-Regular, Arial, sans-serif;
+  font-family: 'Roboto-Regular', Arial, sans-serif;
   text-align: center;
   color: #ffffff;
   background-color: #000000;
@@ -251,7 +251,7 @@ body {
   box-sizing: border-box;
   margin: 40px;
   padding: 20px;
-  max-width: 50vw;
+  max-width: 500px;
   max-height: 50vh;
   text-align: center;
   color: #000000;
@@ -370,12 +370,19 @@ body {
 #bagButton:hover img {
   width: 82px;
 }
+/* WIDTH BREAK POINTS */
 @media (max-width: 680px) {
   #languageDiv {
     width: 220px;
     height: 430px;
   }
 }
+@media (max-width: 480px) {
+  #fullScreenDiv {
+    max-width: calc(100vh - 40px);
+  }
+}
+/* HEIGHT BREAK POINTS */
 @media (max-height: 360px) {
   #agreementDiv .agreement-text {
     height: 15vh;

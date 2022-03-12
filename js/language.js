@@ -1,5 +1,11 @@
 'use strict';
 
+////////////////////////////////////
+//
+//    LANGUAGE
+//
+////////////////
+
 let languagesDiv = document.createElement('div');
 languagesDiv.id = 'languageDiv';
 languagesDiv.innerHTML = `
