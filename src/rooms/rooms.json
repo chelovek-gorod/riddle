@@ -11,6 +11,44 @@
             "de": "Dies ist eine Tutorial-Quest. In diesem Spiel werden Sie sich schnell mit der Benutzeroberfläche und den grundlegenden Funktionen vertraut machen. Genießen!"
         },
 		"preview": "./src/rooms/room0/room0_preview.png",
-        "img": "./src/rooms/room0/room0_preview.png"
+        "bg": "./src/rooms/room0/room0_bg.png",
+        "size": {
+            "width": 1920,
+            "height": 1024,
+            "step": 128
+        },
+        "objects": {
+            "item1": {
+                "name": {
+                    "en": "Item",
+                    "ru": "Предмет",
+                    "de": "Gegenstand"
+                },
+                "state": {
+                    "currentState": "start",
+                    "start": {
+                        "img": "./src/rooms/room0/room0_item1_12frames.png",
+                        "animate": true,
+                        "repeat": true,
+                        "fx": "./src/rooms/room0/room0_item1_fx.mp3",
+                        "fxStartFrame": 0,
+                        "fxRepeat": true
+                    }
+                },
+                "position": {"x": 1, "y": 4},
+                "points": [{"x": 0, "y": 4}, {"x": 1, "y": 3}, {"x": 1, "y": 4}],
+                "actions": {
+                    "look": {
+                        "img": "./src/rooms/room0/room0_item1_12frames.png",
+                        "text": {
+                            "en": "Item",
+                            "ru": "Предмет",
+                            "de": "Gegenstand"
+                        }
+                    },
+                    "use": {}
+                }
+            }
+        }
     }
 }

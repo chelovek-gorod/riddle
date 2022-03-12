@@ -18,11 +18,13 @@ localStorage.clear();
     FREE IMAGES STOCK
 */
 
-// https://unsplash.com/
-// https://www.pexels.com/
-// https://www.gettyimages.com/
-// https://pixabay.com/
-// 
+//  https://unsplash.com/
+//  https://www.pexels.com/
+//  https://www.gettyimages.com/
+//  https://pixabay.com/
+//  https://www.rgbstock.com/
+//  https://realisticshots.com/
+//  https://commons.wikimedia.org/
 
 /***************
     INTERFACE
